@@ -17,6 +17,7 @@ class StudentController extends Controller
     public function index()
     {
         $student = Student::withoutTrashed()->orderBy('created_at', 'DESC')->get();
+        
         $student->transform(function ($student) {
             $student->dob = Carbon::parse($student->dob)->format('Y-M-d');
             return $student;

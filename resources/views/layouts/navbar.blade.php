@@ -48,7 +48,7 @@
             <br>
             <small>{{ auth()->user()->level }}</small>
           </span> --}}
-          <img class="img-profile rounded-circle" src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg">
+          <img class="img-profile rounded-circle" src="{{ url('public/admin_assets/img/afaq.jpeg') }}">
         </a>
         <!-- Dropdown - User Information -->
       </li>
