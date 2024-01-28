@@ -37,10 +37,6 @@
                     <label for="">Student Dob</label>
                     <input type="date" name="dob" class="form-control" placeholder="Date Of Birth" required />
                 </div>
-                <div class="col">
-                    <label for="">Student Father Name</label>
-                    <input type="text" name="dob" class="form-control" placeholder="Std.Father Name" required />
-                </div>
             </div>
             <div class="row">
                 <div class="d-grid">
