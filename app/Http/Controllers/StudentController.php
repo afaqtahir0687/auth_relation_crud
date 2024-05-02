@@ -16,12 +16,13 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::withoutTrashed()->orderBy('created_at', 'DESC')->get();
+        $student = Student::orderBy('created_at', 'DESC')->get();
+        // $student = Student::withoutTrashed()->orderBy('created_at', 'DESC')->get();
         
-        $student->transform(function ($student) {
-            $student->dob = Carbon::parse($student->dob)->format('Y-M-d');
-            return $student;
-        });
+        // $student->transform(function ($student) {
+        //     $student->dob = Carbon::parse($student->dob)->format('Y-M-d');
+        //     return $student;
+        // });
         return view('students.index', compact('student'));
     }
 
