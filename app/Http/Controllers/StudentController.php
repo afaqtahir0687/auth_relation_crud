@@ -44,12 +44,20 @@ class StudentController extends Controller
             'name' => 'required',
             'registration_number' => 'required',
             'dob' => 'required',
+            'gender' => 'required',
+            'fee' => 'required',
+            'language' => 'required',
+            'status' => 'required',
         ]);
 
         $student = new Student();
         $student->name = $request->name;
         $student->registration_number = $request->registration_number;
         $student->dob = $request->dob;
+        $student->gender = $request->gender;
+        $student->fee = $request->fee;
+        $student->language = $request->language;
+        $student->status = $request->status;
         $student->save();
         return Redirect::to('/')->with(['success' => 'Your Student Added Suucessfully']);
     }
