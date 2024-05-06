@@ -49,7 +49,6 @@ class StudentController extends Controller
             'language' => 'required',
             'status' => 'required',
         ]);
-
         $student = new Student();
         $student->name = $request->name;
         $student->registration_number = $request->registration_number;
