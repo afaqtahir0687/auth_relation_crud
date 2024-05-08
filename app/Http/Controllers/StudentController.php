@@ -39,7 +39,6 @@ class StudentController extends Controller
         $gender = 1;
         $language = 0; 
         $status = 1;
-        
         return view('students.create', compact('gender', 'language', 'status'));
     }
 

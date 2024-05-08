@@ -4,7 +4,7 @@ namespace App\Http\Helpers;
 use App\Models\Student;
 
 class AppHelper {
-    
+
     const GENDER = [
         1 => 'Male',
         2 => 'Female'
@@ -22,4 +22,5 @@ class AppHelper {
         1 => "Active",
         2 => "InActive",
     ];
+    
 }

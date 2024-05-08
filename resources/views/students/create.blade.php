@@ -72,7 +72,6 @@
   <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
 
-
 <script>
     $('.datepicker').datepicker({
         uiLibrary: 'bootstrap5',
