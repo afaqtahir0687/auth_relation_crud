@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Student;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\MockObject\Builder\Stub;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Carbon;
+use App\Http\Helpers\AppHelper; // Import AppHelper
+use App\Http\Controllers\Controller; // Import the Controller class
+
+
 
 
 class StudentController extends Controller
@@ -30,8 +35,12 @@ class StudentController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return view('students.create');
+    {      
+        $gender = 1;
+        $language = 0; 
+        $status = 1;
+        
+        return view('students.create', compact('gender', 'language', 'status'));
     }
 
     /**

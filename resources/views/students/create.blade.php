@@ -35,14 +35,11 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="">Date Of Birth</label>
-                        {{-- <input type='text' class="form-control date_picker2"  readonly name="dob" placeholder="Date" value="@if($student){{ $student->dob }}@else{{old('dob')}}@endif" required minlength="10" maxlength="255" /> --}}
                         <input type="text" name="dob" class="form-control datepicker" readonly placeholder="Date Of Birth" required />
-                        {{-- <span class="fa fa-calendar form-control-feedback"></span>
-                        <span class="text-danger">{{ $errors->first('dob') }}</span> --}}
                     </div>
                     <div class="col">
-                        <label for="">Gender</label>
-                        <input type="text" name="gender" class="form-control" placeholder="Gender" required />
+                        <label for="">Gender<span class="text-danger">*</span></label>
+                        {!! Form::select('gender', \App\Http\Helpers\AppHelper::GENDER, $gender , ['class' => 'form-control select2', 'required' => 'true']) !!}
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -51,14 +48,14 @@
                         <input type="number" name="fee" class="form-control" placeholder="Add Fee" required />
                     </div>
                     <div class="col">
-                        <label for="">Laguage</label>
-                        <input type="text" name="language" class="form-control" placeholder="Date Of Birth" required />
+                        <label for="">Language</label>
+                        {!! Form::select('language', \App\Http\Helpers\AppHelper::LANGUAGES, $language , ['class' => 'form-control select2', 'required' => 'true']) !!}
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="">Status</label>
-                        <input type="text" name="status" class="form-control" placeholder="Status" required />
+                        {!! Form::select('status', \App\Http\Helpers\AppHelper::STATUS, null , ['class' => 'form-control select2', 'required' => 'true']) !!}
                     </div>
                 </div>
                 <div class="row">
@@ -78,7 +75,9 @@
 
 <script>
     $('.datepicker').datepicker({
-        uiLibrary: 'bootstrap5'
+        uiLibrary: 'bootstrap5',
+        format: 'yyyy-mm-dd' // Set the date format to match the database expectation
+
     });
 </script>
 
